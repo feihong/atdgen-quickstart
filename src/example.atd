@@ -1,3 +1,4 @@
 type example = {
+  text: string;
   numbers: int list <ocaml repr="array">
 }

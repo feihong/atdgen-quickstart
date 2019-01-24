@@ -2,6 +2,7 @@
               [@@@ocaml.warning "-27-32-35-39"]
 
 type example = Example_t.example = {
+  text: string;
   numbers: int Atdgen_runtime.Util.ocaml_array
 }
 
@@ -22,6 +23,13 @@ let write_example = (
       [
           Atdgen_codec_runtime.Encode.field
             (
+            Atdgen_codec_runtime.Encode.string
+            )
+          ~name:"text"
+          t.text
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
             write__1
             )
           ~name:"numbers"
@@ -34,6 +42,12 @@ let read_example = (
   Atdgen_codec_runtime.Decode.make (fun json ->
     (
       ({
+          text =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.string
+              |> Atdgen_codec_runtime.Decode.field "text"
+            ) json;
           numbers =
             Atdgen_codec_runtime.Decode.decode
             (

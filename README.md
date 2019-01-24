@@ -27,3 +27,21 @@ Install BuckleScript
 
     # Add runtime to be used by generated code
     yarn add @ahrefs/bs-atdgen-codec-runtime
+
+## Commands
+
+Install Node dependencies as well as atd and atdgen binaries
+
+    yarn install
+
+Generate OCaml source files from type definitions in .atd files
+
+    yarn gen
+
+Build .re and .ml source files
+
+    yarn build
+
+Run program
+
+    yarn main
