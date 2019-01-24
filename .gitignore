@@ -1,0 +1,9 @@
+# OCaml
+/_opam/
+.merlin
+
+# BuckleScript
+/lib/
+
+# Node
+/node_modules/

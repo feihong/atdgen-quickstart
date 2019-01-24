@@ -1,0 +1,25 @@
+{
+  "name": "atdgen-quickstart",
+  "version": "0.1.0",
+  "reason": {
+    "react-jsx": 2
+  },
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [
+    "@ahrefs/bs-atdgen-codec-runtime",
+    "@glennsl/bs-json"
+  ],
+  "warnings": {
+    "error": "+A-d"
+  },
+  "namespace": true,
+  "refmt": 3
+}

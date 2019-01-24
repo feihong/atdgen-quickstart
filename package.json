@@ -1,0 +1,19 @@
+{
+  "name": "atdgen-quickstart",
+  "version": "0.1.0",
+  "repository": "git@github.com:feihong/atdgen-workshop",
+  "author": "feihong",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^4.0.18"
+  },
+  "dependencies": {
+    "@ahrefs/bs-atdgen-codec-runtime": "^1.1.0"
+  },
+  "scripts": {
+    "postinstall": "opam pin add atd --dev-repo --yes && opam pin add atdgen --dev-repo --yes",
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "gen": "cd src && atdgen -t example.atd && atdgen -bs example.atd"
+  }
+}
