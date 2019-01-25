@@ -4,7 +4,7 @@
 
 "@ahrefs/bs-atdgen-codec-runtime@feihong/bs-atdgen-codec-runtime":
   version "1.1.0"
-  resolved "https://codeload.github.com/feihong/bs-atdgen-codec-runtime/tar.gz/fb851aef11060810f15c482ca48f7303ec8c6a54"
+  resolved "https://codeload.github.com/feihong/bs-atdgen-codec-runtime/tar.gz/8c8cede14c89c54562b8db4cbd1693e592afaddb"
   dependencies:
     "@glennsl/bs-json" "^3.0.0"
 
