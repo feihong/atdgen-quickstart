@@ -8,13 +8,12 @@
     "bs-platform": "^4.0.18"
   },
   "dependencies": {
-    "@ahrefs/bs-atdgen-codec-runtime": "feihong/bs-atdgen-codec-runtime"
+    "@ahrefs/bs-atdgen-codec-runtime": "^1.2.0"
   },
   "scripts": {
-    "postinstall": "opam pin add atd --dev-repo --yes && opam pin add atdgen --dev-repo --yes",
     "main": "node src/main.bs.js",
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
-    "gen": "cd src && atdgen -t example.atd && atdgen -bs example.atd"
+    "gen": "cd src && esy x atdgen -t example.atd && esy x atdgen -bs example.atd"
   }
 }

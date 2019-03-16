@@ -2,9 +2,10 @@
 # yarn lockfile v1
 
 
-"@ahrefs/bs-atdgen-codec-runtime@feihong/bs-atdgen-codec-runtime":
-  version "1.1.0"
-  resolved "https://codeload.github.com/feihong/bs-atdgen-codec-runtime/tar.gz/8c8cede14c89c54562b8db4cbd1693e592afaddb"
+"@ahrefs/bs-atdgen-codec-runtime@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ahrefs/bs-atdgen-codec-runtime/-/bs-atdgen-codec-runtime-1.2.0.tgz#195c1f436590da22da3551662db1c123d05b6982"
+  integrity sha512-KKfn5KaCxCSY+zT2E0GjnhN3VUVvrJSfzNtWnaSqKCzrUKlbSvz0EjCqr3gUbMRTZ+/Ik+t1S77xp4q7xz00NQ==
   dependencies:
     "@glennsl/bs-json" "^3.0.0"
 

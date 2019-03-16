@@ -1,6 +1,7 @@
 # OCaml
 /_opam/
 .merlin
+/_esy/
 
 # BuckleScript
 /lib/
