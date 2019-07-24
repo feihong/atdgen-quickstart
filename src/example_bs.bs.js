@@ -24,7 +24,10 @@ var write_example = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
                     Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* string */3], "text", t[/* text */0]),
                     /* :: */[
                       Atdgen_codec_runtime.Encode[/* field */12](undefined, write__1, "numbers", t[/* numbers */1]),
-                      /* [] */0
+                      /* :: */[
+                        Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* int */5], "lives", t[/* lives */2]),
+                        /* [] */0
+                      ]
                     ]
                   ]);
       }));
@@ -39,7 +42,8 @@ var read_example = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
                       }), json),
                 /* numbers */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
                         return partial_arg$2("numbers", read__1, param);
-                      }), json)
+                      }), json),
+                /* lives */Atdgen_codec_runtime.Decode[/* decode */1](Atdgen_codec_runtime.Decode[/* fieldDefault */16]("lives", 9, Atdgen_codec_runtime.Decode[/* int */4]), json)
               ];
       }));
 

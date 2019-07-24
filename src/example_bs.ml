@@ -3,7 +3,8 @@
 
 type example = Example_t.example = {
   text: string;
-  numbers: int Atdgen_runtime.Util.ocaml_array
+  numbers: int Atdgen_runtime.Util.ocaml_array;
+  lives: int
 }
 
 let write__1 = (
@@ -34,6 +35,13 @@ let write_example = (
             )
           ~name:"numbers"
           t.numbers
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
+            Atdgen_codec_runtime.Encode.int
+            )
+          ~name:"lives"
+          t.lives
       ]
     )
   )
@@ -53,6 +61,12 @@ let read_example = (
             (
               read__1
               |> Atdgen_codec_runtime.Decode.field "numbers"
+            ) json;
+          lives =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.int
+              |> Atdgen_codec_runtime.Decode.fieldDefault "lives" 9
             ) json;
       } : example)
     )
