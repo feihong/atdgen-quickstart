@@ -13,17 +13,20 @@ var example_001 = /* numbers : array */[
   5
 ];
 
+var example_003 = /* stuff */33;
+
 var example = /* record */[
   /* text */"Hello there",
   example_001,
-  /* lives */12
+  /* lives */12,
+  example_003
 ];
 
 console.log("Record:", example);
 
 console.log("JS:", Curry._1(Example_bs$AtdgenQuickstart.write_example, example));
 
-var json = Json.parseOrRaise("{\"numbers\": [5,4,3], \"text\": \"string\", \"lives\": \"not right\"}");
+var json = Json.parseOrRaise("{\"numbers\": [5,4,3], \"text\": \"string\", \"lives\": \"not right\", \"stuff\": \"not right\"}");
 
 console.log("Decoded record:", Curry._1(Example_bs$AtdgenQuickstart.read_example, json));
 

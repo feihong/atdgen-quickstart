@@ -2,4 +2,5 @@ type example = {
   text: string;
   numbers: int list <ocaml repr="array">;
   ~lives <ocaml default="9">: int;
+  ?stuff: int option;
 }

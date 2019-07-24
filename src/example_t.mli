@@ -4,5 +4,6 @@
 type example = {
   text: string;
   numbers: int Atdgen_runtime.Util.ocaml_array;
-  lives: int
+  lives: int;
+  stuff: int option
 }

@@ -3,6 +3,8 @@
 
 var Atdgen_codec_runtime = require("@ahrefs/bs-atdgen-codec-runtime/src/atdgen_codec_runtime.bs.js");
 
+Atdgen_codec_runtime.Decode[/* option_as_constr */25](Atdgen_codec_runtime.Decode[/* int */4]);
+
 var partial_arg = Atdgen_codec_runtime.Encode[/* int */5];
 
 var partial_arg$1 = Atdgen_codec_runtime.Encode[/* array */9];
@@ -26,7 +28,10 @@ var write_example = Atdgen_codec_runtime.Encode[/* make */0]((function (t) {
                       Atdgen_codec_runtime.Encode[/* field */12](undefined, write__1, "numbers", t[/* numbers */1]),
                       /* :: */[
                         Atdgen_codec_runtime.Encode[/* field */12](undefined, Atdgen_codec_runtime.Encode[/* int */5], "lives", t[/* lives */2]),
-                        /* [] */0
+                        /* :: */[
+                          Atdgen_codec_runtime.Encode[/* field_o */13](undefined, Atdgen_codec_runtime.Encode[/* int */5], "stuff", t[/* stuff */3]),
+                          /* [] */0
+                        ]
                       ]
                     ]
                   ]);
@@ -43,10 +48,11 @@ var read_example = Atdgen_codec_runtime.Decode[/* make */0]((function (json) {
                 /* numbers */Atdgen_codec_runtime.Decode[/* decode */1]((function (param) {
                         return partial_arg$2("numbers", read__1, param);
                       }), json),
-                /* lives */Atdgen_codec_runtime.Decode[/* decode */1](Atdgen_codec_runtime.Decode[/* fieldDefault */16]("lives", 9, Atdgen_codec_runtime.Decode[/* int */4]), json)
+                /* lives */Atdgen_codec_runtime.Decode[/* decode */1](Atdgen_codec_runtime.Decode[/* fieldDefault */16]("lives", 9, Atdgen_codec_runtime.Decode[/* int */4]), json),
+                /* stuff */Atdgen_codec_runtime.Decode[/* decode */1](Atdgen_codec_runtime.Decode[/* fieldOptional */17]("stuff", Atdgen_codec_runtime.Decode[/* int */4]), json)
               ];
       }));
 
 exports.read_example = read_example;
 exports.write_example = write_example;
-/* write_example Not a pure module */
+/*  Not a pure module */
