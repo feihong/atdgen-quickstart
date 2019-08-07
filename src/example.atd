@@ -1,6 +1,7 @@
 type example = {
   text: string;
   numbers: int list <ocaml repr="array">;
+  level: int <ocaml repr="int64">;
   ~lives <ocaml default="9">: int;
   ?stuff: int option;
 }

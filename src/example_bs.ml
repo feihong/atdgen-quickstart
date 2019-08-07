@@ -4,6 +4,7 @@
 type example = Example_t.example = {
   text: string;
   numbers: int Atdgen_runtime.Util.ocaml_array;
+  level: Int64.t;
   lives: int;
   stuff: int option
 }
@@ -49,6 +50,13 @@ let write_example = (
         ;
           Atdgen_codec_runtime.Encode.field
             (
+            Atdgen_codec_runtime.Encode.int64
+            )
+          ~name:"level"
+          t.level
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
             Atdgen_codec_runtime.Encode.int
             )
           ~name:"lives"
@@ -79,6 +87,12 @@ let read_example = (
             (
               read__1
               |> Atdgen_codec_runtime.Decode.field "numbers"
+            ) json;
+          level =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              Atdgen_codec_runtime.Decode.int64
+              |> Atdgen_codec_runtime.Decode.field "level"
             ) json;
           lives =
             Atdgen_codec_runtime.Decode.decode
