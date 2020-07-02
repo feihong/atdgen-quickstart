@@ -19,21 +19,27 @@ var example_002 = /* level : int64 */[
   /* lo */0
 ];
 
-var example_004 = /* stuff */33;
+var example_003 = /* level2 : int64 */[
+  /* hi */2097152,
+  /* lo */0
+];
+
+var example_005 = /* stuff */33;
 
 var example = /* record */[
   /* text */"Hello there",
   example_001,
   example_002,
+  example_003,
   /* lives */12,
-  example_004
+  example_005
 ];
 
 console.log("Record:", example);
 
 console.log("JS:", Curry._1(Example_bs$AtdgenQuickstart.write_example, example));
 
-var json = Json.parseOrRaise("{\"numbers\": [5,4,3], \"text\": \"string\", \"level\": \"9007199254740995\"}");
+var json = Json.parseOrRaise("{\"numbers\": [5,4,3], \"text\": \"string\", \"level\": \"9007199254740995\", \"level2\": \"9007199254740995\"}");
 
 var record = Curry._1(Example_bs$AtdgenQuickstart.read_example, json);
 
@@ -41,7 +47,9 @@ console.log("Decoded record:", record);
 
 console.log("Decoded level:", record[/* level */2]);
 
-console.log("Decoded level (as string):", Int64.to_string(record[/* level */2]));
+console.log("Decoded level (as string): ", Int64.to_string(record[/* level */2]));
+
+console.log("Decoded level2 (as string):", Int64.to_string(record[/* level2 */3]));
 
 exports.example = example;
 exports.json = json;

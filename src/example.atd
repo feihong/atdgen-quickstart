@@ -2,6 +2,7 @@ type example = {
   text: string;
   numbers: int list <ocaml repr="array">;
   level: int <ocaml repr="int64">;
+  level2: string wrap <ocaml t="Int64.t" wrap="Int64.of_string" unwrap="Int64.to_string">;
   ~lives <ocaml default="9">: int;
   ?stuff: int option;
 }

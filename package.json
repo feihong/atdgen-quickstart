@@ -12,6 +12,7 @@
   },
   "scripts": {
     "main": "node src/main.bs.js",
+    "main_native": "esy x utop main.ml",
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
     "gen": "cd src && esy x atdgen -t example.atd && esy x atdgen -bs example.atd && esy x atdgen -j example.atd",

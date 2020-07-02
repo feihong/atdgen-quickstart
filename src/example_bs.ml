@@ -5,19 +5,29 @@ type example = Example_t.example = {
   text: string;
   numbers: int Atdgen_runtime.Util.ocaml_array;
   level: Int64.t;
+  level2: Int64.t;
   lives: int;
   stuff: int option
 }
 
-let write__2 = (
+let write__3 = (
   Atdgen_codec_runtime.Encode.option_as_constr (
     Atdgen_codec_runtime.Encode.int
   )
 )
-let read__2 = (
+let read__3 = (
   Atdgen_codec_runtime.Decode.option_as_constr (
     Atdgen_codec_runtime.Decode.int
   )
+)
+let write__2 = (
+    Atdgen_codec_runtime.Encode.string
+  |> Atdgen_codec_runtime.Encode.contramap (Int64.to_string)
+)
+let read__2 = (
+  (
+    Atdgen_codec_runtime.Decode.string
+  ) |> (Atdgen_codec_runtime.Decode.map (Int64.of_string))
 )
 let write__1 = (
   Atdgen_codec_runtime.Encode.array (
@@ -57,6 +67,13 @@ let write_example = (
         ;
           Atdgen_codec_runtime.Encode.field
             (
+            write__2
+            )
+          ~name:"level2"
+          t.level2
+        ;
+          Atdgen_codec_runtime.Encode.field
+            (
             Atdgen_codec_runtime.Encode.int
             )
           ~name:"lives"
@@ -93,6 +110,12 @@ let read_example = (
             (
               Atdgen_codec_runtime.Decode.int64
               |> Atdgen_codec_runtime.Decode.field "level"
+            ) json;
+          level2 =
+            Atdgen_codec_runtime.Decode.decode
+            (
+              read__2
+              |> Atdgen_codec_runtime.Decode.field "level2"
             ) json;
           lives =
             Atdgen_codec_runtime.Decode.decode
