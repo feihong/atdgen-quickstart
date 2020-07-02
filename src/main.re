@@ -14,7 +14,7 @@ Js.log2("JS:", Example_bs.write_example(example));
 
 let json =
   Json.parseOrRaise(
-    {|{"numbers": [5,4,3], "text": "string", "level": "9007199254740992"}|},
+    {|{"numbers": [5,4,3], "text": "string", "level": "9007199254740995"}|},
   );
 let record = Example_bs.read_example(json);
 Js.log2("Decoded record:", record);

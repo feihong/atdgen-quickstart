@@ -33,7 +33,7 @@ console.log("Record:", example);
 
 console.log("JS:", Curry._1(Example_bs$AtdgenQuickstart.write_example, example));
 
-var json = Json.parseOrRaise("{\"numbers\": [5,4,3], \"text\": \"string\", \"level\": \"9007199254740992\"}");
+var json = Json.parseOrRaise("{\"numbers\": [5,4,3], \"text\": \"string\", \"level\": \"9007199254740995\"}");
 
 var record = Curry._1(Example_bs$AtdgenQuickstart.read_example, json);
 
